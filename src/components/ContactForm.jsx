@@ -39,15 +39,15 @@ const ContactForm = ({ onAddContact }) => {
                 onSubmit={handleSubmit}
                 validationSchema={FeedbackSchema}
             >
-                <Form>
+                <Form className="contact-form">
                     <label htmlFor={nameFieldId}>
                         Name
-                        <Field type="text" name="username" id={nameFieldId} />
+                        <Field type="text" className="form-name" name="username" id={nameFieldId} />
                         <ErrorMessage name="username" component="div" />
                     </label>
                     <label htmlFor={numberFieldId}>
                         Number
-                        <Field type="text" name="number" id={numberFieldId} />
+                        <Field type="text" className="form-number" name="number" id={numberFieldId} />
                         <ErrorMessage name="number" component="div" />
                     </label>
 
