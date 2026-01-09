@@ -1,9 +1,10 @@
 import Contact from './Contact'
 
+
 const ContactList = ({ contacts, onDelete }) => {
     return (
         <>
-            <ul>
+            <ul className="contact-list">
                 {contacts.map((contactItem) => (
                     <li key={contactItem.id}>
                         <Contact contact={contactItem}

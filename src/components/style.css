@@ -45,3 +45,51 @@ button {
 button:hover {
     background-color: rgb(136, 135, 135);
 }
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #555;
+}
+
+.contact-title {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.contact-name {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.contact-number {
+    font-size: 16px;
+    color: #555;
+}
+
+.contact-button {
+    margin-top: 10px;
+}
+
+.search-box {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.search-box::placeholder {
+    color: #999;
+}

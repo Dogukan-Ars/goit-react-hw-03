@@ -1,4 +1,3 @@
-
 const SearchBox = ({ value, onChange }) => {
 
     const handleChange = (event) => {
@@ -7,9 +6,11 @@ const SearchBox = ({ value, onChange }) => {
 
     return (
         <>
+            Find contacts by name
             <input
                 type="text"
                 placeholder="Search contacts..."
+                className="search-box"
                 value={value}
                 onChange={handleChange} />
         </>

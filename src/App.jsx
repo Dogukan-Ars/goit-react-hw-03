@@ -5,7 +5,7 @@ import ContactForm from './components/ContactForm'
 import ContactList from './components/ContactList'
 import SearchBox from './components/SearchBox'
 import contacts from './contacts.json'
-import './components/style.module.css'
+import './components/style.css'
 
 const INITIAL_CONTACTS = contacts;
 
