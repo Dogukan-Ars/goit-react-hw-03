@@ -1,7 +1,9 @@
 import { ErrorMessage, Field, Form, Formik } from "formik"
 import * as Yup from "yup"
 import "yup-phone"
-import { use, useId } from "react"
+import { useId } from "react"
+import style from "./ContactForm.module.css"
+import { nanoid } from "nanoid"
 
 const phoneRegExp =
     /^(\+?\d{1,3}[- ]?)?\d{10}$/;
@@ -23,7 +25,7 @@ const ContactForm = ({ onAddContact }) => {
     const handleSubmit = (values, action) => {
 
         const newContact = {
-            id: crypto.randomUUID(),
+            id: nanoid(),
             name: values.username,
             number: values.number,
         };
@@ -39,19 +41,19 @@ const ContactForm = ({ onAddContact }) => {
                 onSubmit={handleSubmit}
                 validationSchema={FeedbackSchema}
             >
-                <Form className="contact-form">
+                <Form className={style.contactForm}>
                     <label htmlFor={nameFieldId}>
                         Name
-                        <Field type="text" className="form-name" name="username" id={nameFieldId} />
+                        <Field type="text" className={style.formName} name="username" id={nameFieldId} />
                         <ErrorMessage name="username" component="div" />
                     </label>
                     <label htmlFor={numberFieldId}>
                         Number
-                        <Field type="text" className="form-number" name="number" id={numberFieldId} />
+                        <Field type="text" className={style.formNumber} name="number" id={numberFieldId} />
                         <ErrorMessage name="number" component="div" />
                     </label>
 
-                    <button type="submit">Add contact</button>
+                    <button type="submit" className={style}>Add contact</button>
                 </Form>
 
             </Formik>

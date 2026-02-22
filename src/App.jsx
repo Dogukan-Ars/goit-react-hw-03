@@ -1,23 +1,25 @@
 
 import { useEffect, useState } from 'react'
 import './App.css'
-import ContactForm from './components/ContactForm'
-import ContactList from './components/ContactList'
-import SearchBox from './components/SearchBox'
+import ContactForm from './components/ContactForm/ContactForm'
+import ContactList from './components/ContactList/ContactList'
+import SearchBox from './components/SearchBox/SearchBox'
 import contacts from './contacts.json'
-import './components/style.css'
 
 const INITIAL_CONTACTS = contacts;
+const LOCAL_STORAGE_KEY = 'phonebook_contacts';
 
 function App() {
   const [searchQuery, setSearchQuery] = useState("");
   const [contactList, setContactList] = useState(() => {
-    const savedContacts = localStorage.getItem(INITIAL_CONTACTS);
+    const savedContacts = localStorage.getItem(LOCAL_STORAGE_KEY);
     return savedContacts ? JSON.parse(savedContacts) : INITIAL_CONTACTS;
   })
 
   useEffect(() => {
-    localStorage.setItem(INITIAL_CONTACTS, JSON.stringify(contactList));
+    if (contactList.length > 0) {
+      localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(contactList));
+    }
   }, [contactList])
 
   const handleAddContact = (newContact) => {

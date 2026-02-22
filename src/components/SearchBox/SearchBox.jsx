@@ -1,3 +1,5 @@
+import style from './SearchBox.module.css';
+
 const SearchBox = ({ value, onChange }) => {
 
     const handleChange = (event) => {
@@ -5,15 +7,15 @@ const SearchBox = ({ value, onChange }) => {
     }
 
     return (
-        <>
+        <div className={style.searchBox}>
             Find contacts by name
             <input
                 type="text"
                 placeholder="Search contacts..."
-                className="search-box"
+                className={style.searchBoxInput}
                 value={value}
                 onChange={handleChange} />
-        </>
+        </div>
     )
 }
 
